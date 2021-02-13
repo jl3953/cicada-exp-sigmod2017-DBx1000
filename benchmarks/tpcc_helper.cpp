@@ -1,5 +1,5 @@
 #include "tpcc_helper.h"
-#include <city.h>
+#include <mica/util/cityhash/city.h>
 
 drand48_data** tpcc_buffer;
 uint64_t C_255, C_1023, C_8191;

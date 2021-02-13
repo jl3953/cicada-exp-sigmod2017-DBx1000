@@ -1,5 +1,5 @@
 #include "tatp_helper.h"
-#include <city.h>
+#include <mica/util/cityhash/city.h>
 
 uint64_t subscriberKey(uint64_t s_id) { return s_id; }
 
