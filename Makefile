@@ -1,7 +1,7 @@
 #CC=g++
 CC=g++-5
 #CFLAGS=-Wall -g -std=c++0x
-CFLAGS=-Wall -g -std=c++14
+CFLAGS=-Wall -g -std=c++14 -no-pie
 
 .SUFFIXES: .o .cpp .h
 
@@ -25,15 +25,15 @@ DEPS = $(CPPS:.cpp=.d)
 all:rundb
 
 rundb : $(OBJS) ../cicada-engine/build/libcommon.a \
-	../silo/out-perf.masstree/allocator.o \
-	../silo/out-perf.masstree/compiler.o \
-	../silo/out-perf.masstree/core.o \
-	../silo/out-perf.masstree/counter.o \
-	../silo/out-perf.masstree/json.o \
-	../silo/out-perf.masstree/straccum.o \
-	../silo/out-perf.masstree/string.o \
-	../silo/out-perf.masstree/ticker.o \
-	../silo/out-perf.masstree/rcu.o
+	../silo/out-perf.debug.masstree/allocator.o \
+	../silo/out-perf.debug.masstree/compiler.o \
+	../silo/out-perf.debug.masstree/core.o \
+	../silo/out-perf.debug.masstree/counter.o \
+	../silo/out-perf.debug.masstree/json.o \
+	../silo/out-perf.debug.masstree/straccum.o \
+	../silo/out-perf.debug.masstree/string.o \
+	../silo/out-perf.debug.masstree/ticker.o \
+	../silo/out-perf.debug.masstree/rcu.o
 	$(CC) -o $@ $^ $(LDFLAGS)
 
 -include $(OBJS:%.o=%.d)
